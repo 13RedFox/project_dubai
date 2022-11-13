@@ -1,0 +1,19 @@
+@import 'main';
+
+.container {
+  padding-left: $PADDING_MOBILE;
+  padding-right: $PADDING_MOBILE;
+  max-width: $CONTAINER;
+  width: 100%;
+  margin: 0 auto;
+  @include media($SCREEN_TABLET) {
+    max-width: calc($CONTAINER + ($PADDING_TABLET * 2));
+    padding-left: $PADDING_TABLET;
+    padding-right: $PADDING_TABLET;
+  }
+  @include media($SCREEN_HD) {
+    max-width: calc($CONTAINER + ($PADDING_DESKTOP * 2));
+    padding-left: $PADDING_DESKTOP;
+    padding-right: $PADDING_DESKTOP;
+  }
+}
