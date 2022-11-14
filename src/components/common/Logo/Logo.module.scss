@@ -11,15 +11,17 @@
     max-width: 179px;
     padding-top: 10px;
   }
-  @include media($SCREEN_HD) {
-    max-width: 184px;
-    padding: 7px 0 15px 15px;
+  @include media($SCREEN_DESKTOP) {
     &:hover::before {
       width: 10%;
     }
     &:hover::after {
       width: 65%;
     }
+  }
+  @include media($SCREEN_HD) {
+    max-width: 184px;
+    padding: 7px 0 15px 15px;
   }
 
   &::before,
