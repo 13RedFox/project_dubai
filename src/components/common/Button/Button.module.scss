@@ -1,0 +1,36 @@
+@import 'main';
+
+.btn {
+  font-family: $SECOND_FONT;
+  @include text(rem(14px), 600, $BLACK);
+  line-height: 114%;
+  background-color: $YELLOW;
+  cursor: pointer;
+}
+
+// SIZE:
+.default {
+  padding: 12px 14px;
+}
+
+.popup {
+  padding: 16px 85px 17px;
+}
+
+.contact {
+  padding: 12px 35px 13px;
+  @include media($SCREEN_TABLET) {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+  @include media($SCREEN_HD) {
+    padding-top: 22px;
+    padding-bottom: 23px;
+  }
+}
+
+// COLOR:
+.black {
+  background-color: $BLACK;
+  color: $WHITE;
+}
