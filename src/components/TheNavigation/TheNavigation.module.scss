@@ -1,0 +1,59 @@
+@import 'main';
+
+.header {
+  padding-top: 15px;
+  margin-bottom: 20px;
+  @include media($SCREEN_HD) {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__nav {
+    @include flex(start, center);
+
+    &_btn {
+      margin-right: 119px;
+    }
+
+    &_lang {
+      @include text(rem(14px), 400, $GRAY);
+      line-height: 106%;
+      text-transform: uppercase;
+    }
+
+    &_phone {
+      @include text(rem(16px), 600, $WHITE);
+      line-height: 125%;
+      margin-left: 53px;
+    }
+  }
+
+  .container {
+    @include flex(space-between, center);
+  }
+
+  .text {
+    cursor: pointer;
+    @include transition(color);
+    &:hover {
+      color: $YELLOW;
+    }
+    &:first-child {
+      margin-right: 8px;
+    }
+  }
+
+  // MENU component
+
+  .menu {
+    @include flex(space-between, center);
+    width: 100%;
+    max-width: 330px;
+
+    &__link {
+      @include text(rem(14px), 600, $WHITE);
+      line-height: 121%;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,3 +1,9 @@
+import { TheNavigation } from '../components/TheNavigation';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <TheNavigation />
+    </>
+  );
 };
