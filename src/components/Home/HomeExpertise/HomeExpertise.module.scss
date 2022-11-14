@@ -1,0 +1,54 @@
+@import 'main';
+
+.expertise {
+  padding-top: 70px;
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    @include media($SCREEN_DESKTOP) {
+      max-width: 730px;
+    }
+    &_subtitle {
+      font-family: $SECOND_FONT;
+      @include text(rem(14px), 600, $YELLOW);
+      line-height: 114%;
+      margin-bottom: 10px;
+      @include media($SCREEN_TABLET) {
+        font-size: rem(16px);
+        line-height: 118%;
+        margin-bottom: 14px;
+      }
+      @include media($SCREEN_DESKTOP) {
+        font-size: rem(18px);
+        line-height: 160%;
+        margin-bottom: 40px;
+      }
+    }
+    &_title {
+      @include text(rem(24px), 700, $GRAY_L);
+      line-height: 125%;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      @include media($SCREEN_TABLET) {
+        font-size: rem(30px);
+        line-height: 123%;
+        margin-bottom: 23px;
+        max-width: 450px;
+      }
+      @include media($SCREEN_DESKTOP) {
+        font-size: rem(70px);
+        line-height: 100%;
+        margin-bottom: 33px;
+        max-width: 100%;
+      }
+    }
+    &_description {
+      font-family: $SECOND_FONT;
+      @include text(rem(14px), 400, $GRAY_L);
+      line-height: 160%;
+    }
+    @include media($SCREEN_DESKTOP) {
+      font-size: rem(18px);
+    }
+  }
+}

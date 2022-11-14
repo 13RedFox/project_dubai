@@ -1,3 +1,9 @@
+import { HomeExpertise } from '../components/Home';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <HomeExpertise />
+    </>
+  );
 };
