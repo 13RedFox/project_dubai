@@ -1,6 +1,7 @@
 @import 'main';
 
 .header {
+  position: relative;
   padding-top: 15px;
   margin-bottom: 20px;
   @include media($SCREEN_HD) {
@@ -11,8 +12,6 @@
   &__nav {
     @include flex(end, center);
     width: 850px;
-
-
     &_btn {
       margin-left: 30px;
     }
@@ -29,6 +28,7 @@
       line-height: 125%;
       margin-left: 30px;
       @include transition(color);
+
       &:hover {
         color: $YELLOW;
       }
@@ -53,62 +53,6 @@
     }
     &:first-child {
       margin-right: 8px;
-    }
-  }
-
-  // MENU component
-  .menu {
-    position: relative;
-    @include flex(space-between, center);
-    width: 100%;
-    max-width: 330px;
-    display: none;
-    @include media($SCREEN_DESKTOP) {
-      display: flex;
-    }
-
-    &__item:hover .supmenu {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    &__link {
-      display: block;
-      @include text(rem(14px), 600, $WHITE);
-      line-height: 121%;
-      text-transform: uppercase;
-      padding: 22px 0;
-      @include transition(color);
-
-      &:hover {
-        color: $YELLOW;
-      }
-    }
-  }
-
-  // SUP_MENU
-  .supmenu {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    bottom: -100px;
-    width: 100%;
-    max-width: 247px;
-    background-color: $DARK;
-    border: 1px solid #979797;
-    @include transition(opacity, visibility);
-
-    &__link {
-      display: flex;
-      @include text(rem(14px), 600, $WHITE);
-      padding: 9px 0 9px 20px;
-      @include transition(color, background-color);
-
-      &:hover {
-        background-color: $YELLOW;
-        color: $DARK;
-      }
     }
   }
 

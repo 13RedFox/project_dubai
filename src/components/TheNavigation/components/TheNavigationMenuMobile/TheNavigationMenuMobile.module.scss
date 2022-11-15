@@ -1,0 +1,77 @@
+@import 'main';
+
+.wrapper {
+  position: absolute;
+  top: 115px;
+  left: 15px;
+  width: calc(100vw - 30px);
+  background-color: $DARK;
+  padding-bottom: 12px;
+  @include media($SCREEN_MS) {
+    display: none;
+  }
+
+  .navMobile {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto 60px;
+    &__item {
+      margin-bottom: 20px;
+      &:hover .navSubMenu {
+        display: flex;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      @include text(rem(36px), 500, $WHITE);
+      line-height: 122%;
+      text-transform: uppercase;
+      @include transition(color);
+      &:hover {
+        color: $YELLOW;
+      }
+    }
+  }
+
+  .navSubMenu {
+    display: none;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-left: 22px;
+    &__item {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      @include text(rem(14px), 500, $WHITE);
+      line-height: 121%;
+      @include transition(color);
+      &:hover {
+        color: $YELLOW;
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $YELLOW;
+    width: 100%;
+    margin-bottom: 38px;
+    @include media($SCREEN_TABLET) {
+      display: none;
+    }
+  }
+
+  .info {
+    display: flex;
+    @include media($SCREEN_TABLET) {
+      display: none;
+    }
+  }
+}

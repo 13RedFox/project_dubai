@@ -1,0 +1,117 @@
+@import 'main';
+
+.info {
+  @include flex-col(flex-start, center);
+  @include media($SCREEN_TABLET) {
+    @include flex-row(flex-start, center);
+  }
+
+  &__btn {
+    margin-bottom: 50px;
+    @include media($SCREEN_TABLET) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__phone {
+    @include text(rem(16px), 400, $WHITE);
+    line-height: 125%;
+    margin-bottom: 38px;
+    order: 1;
+    @include media($SCREEN_TABLET) {
+      order: 2;
+      margin-bottom: 0;
+      margin-left: 22px;
+    }
+  }
+
+  .wrapperLang {
+    order: 1;
+    @include media($SCREEN_TABLET) {
+      order: 2;
+      margin-left: 30px;
+    }
+
+    &__lang {
+      @include text(rem(14px), 400, $WHITE);
+      text-transform: uppercase;
+      cursor: pointer;
+      opacity: 0.6;
+      margin-right: 8px;
+      @include transition(color, opacity);
+      &:hover {
+        color: $YELLOW;
+        opacity: 1;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // MENU
+  .navMobile {
+    width: 330px;
+    display: none;
+    margin-right: 50px;
+    position: relative;
+    background-color: $DARK;
+    @include media($SCREEN_MS) {
+      @include flex(space-between);
+    }
+
+    &__item {
+      padding: 11px 0;
+      &:hover > .navSubMenu {
+        display: flex;
+      }
+    }
+
+    &__link {
+      position: relative;
+      @include text(rem(14px), 600, $WHITE);
+      line-height: 122%;
+      text-transform: uppercase;
+      &:hover::after {
+        width: 100%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $YELLOW;
+        @include transition(width);
+      }
+    }
+  }
+}
+
+.navSubMenu {
+  position: absolute;
+  top: 35px;
+  display: none;
+  flex-direction: column;
+  border: 1px solid $GRAY;
+
+  &__item {
+    padding: 10px 35px 10px 20px;
+    @include transition(background-color, color);
+    &:hover {
+      background-color: $YELLOW;
+      color: $DARK;
+    }
+    &:hover .navSubMenu__link {
+      color: $DARK;
+    }
+  }
+
+  &__link {
+    @include text(rem(14px), 500, $WHITE);
+    line-height: 121%;
+    @include transition(color);
+  }
+}
