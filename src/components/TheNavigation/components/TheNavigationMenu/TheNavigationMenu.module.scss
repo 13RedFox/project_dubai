@@ -1,0 +1,27 @@
+@import 'main';
+
+.nav {
+  position: relative;
+  @include flex(start, center);
+  max-width: 850px;
+  .burger {
+    cursor: pointer;
+    margin-left: 40px;
+    @include media($SCREEN_MS) {
+      display: none;
+    }
+    .burgerIcon {
+      @include svg(16px, $WHITE);
+      @include transition(fill);
+    }
+    .show {
+      fill: $YELLOW;
+    }
+  }
+  .info {
+    display: none;
+    @include media($SCREEN_TABLET) {
+      display: flex;
+    }
+  }
+}

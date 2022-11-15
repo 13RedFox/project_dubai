@@ -1,0 +1,62 @@
+@import 'main';
+
+.header {
+  position: relative;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  @include media($SCREEN_HD) {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__nav {
+    @include flex(end, center);
+    width: 850px;
+    &_btn {
+      margin-left: 30px;
+    }
+
+    &_lang {
+      @include text(rem(14px), 400, $GRAY);
+      line-height: 106%;
+      text-transform: uppercase;
+      margin-left: 20px;
+    }
+
+    &_phone {
+      @include text(rem(16px), 600, $WHITE);
+      line-height: 125%;
+      margin-left: 30px;
+      @include transition(color);
+
+      &:hover {
+        color: $YELLOW;
+      }
+    }
+
+    &_burger {
+      @include svg(20px, $WHITE);
+      margin-left: 30px;
+      cursor: pointer;
+    }
+
+    .active {
+      fill: $YELLOW;
+    }
+  }
+
+  .text {
+    cursor: pointer;
+    @include transition(color);
+    &:hover {
+      color: $YELLOW;
+    }
+    &:first-child {
+      margin-right: 8px;
+    }
+  }
+
+  .container {
+    @include flex(space-between, center);
+  }
+}
