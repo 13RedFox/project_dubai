@@ -1,0 +1,14 @@
+@import 'main';
+
+.socialNav {
+  width: 100%;
+  max-width: 205px;
+  &__icon {
+    font-size: rem(18px);
+    color: $GRAY_L;
+    @include transition(color);
+    &:hover {
+      color: #fcd54c;
+    }
+  }
+}
