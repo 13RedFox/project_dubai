@@ -1,0 +1,119 @@
+@import 'main';
+
+.footer {
+  border-top: 1px solid rgba($WHITE, 0.3);
+  padding-top: 40px;
+  @include media($SCREEN_DESKTOP) {
+    padding-top: 70px;
+  }
+
+  .container {
+    @include flex-col(start, center);
+    @include media($SCREEN_DESKTOP) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .logo {
+    margin-bottom: 40px;
+    @include media($SCREEN_TABLET) {
+      margin-bottom: 27px;
+    }
+    @include media($SCREEN_DESKTOP) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .wrapper {
+    @include flex-col(start, start);
+    width: 100%;
+    @include media($SCREEN_HD) {
+      @include flex-row(space-between, start);
+    }
+  }
+
+  .contacts {
+    width: 100%;
+    @include flex-col(start, start);
+    @include media($SCREEN_TABLET_SMALL) {
+      @include flex-row(space-between, end);
+    }
+    @include media($SCREEN_HD) {
+      @include flex-col(start, start);
+      width: 30%;
+    }
+    &__wrapper {
+      @include flex-col(start, start);
+    }
+    &__info {
+      @include text(rem(18px), 400, $GRAY_L);
+      line-height: 160%;
+    }
+    .title {
+      padding-top: 12px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      @include media($SCREEN_HD) {
+        margin-bottom: 40px;
+      }
+    }
+    .street {
+      max-width: 192px;
+      margin-bottom: 20px;
+    }
+    .email {
+      padding-bottom: 0;
+      margin-bottom: 50px;
+      @include media($SCREEN_TABLET_SMALL) {
+        margin-bottom: 0;
+      }
+      @include media($SCREEN_HD) {
+        margin-bottom: 78px;
+      }
+    }
+    &__btn {
+      background-color: #fbc710;
+    }
+  }
+
+  .containerBottom {
+    width: 100%;
+    max-width: none;
+    @include flex-col(start, center);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 60px;
+    @include media($SCREEN_TABLET_SMALL) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      margin-top: 30px;
+    }
+    @include media($SCREEN_TABLET) {
+      @include flex-row(space-between, center);
+      padding-top: 32px;
+      padding-bottom: 40px;
+      margin-top: 60px;
+    }
+    @include media($SCREEN_HD) {
+      margin-top: 100px;
+    }
+  }
+
+  .socialNav {
+    @include flex(space-between, center);
+    margin-bottom: 15px;
+    @include media($SCREEN_TABLET) {
+      margin-bottom: 0;
+      order: 2;
+    }
+    @include media($SCREEN_HD) {
+    }
+  }
+
+  .copy {
+    @include text(rem(12px), 400, $GRAY_L);
+    line-height: 125%;
+  }
+}
